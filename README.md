@@ -31,4 +31,4 @@ The whole data-path is divided into 5 stages namely-
 
 and basic digital components like MUXes, decoders... All of these individual parts together (except the control logic) make up the data-path.
 
-## Instructions that are implemented in this project
+## Short note on RV32I instructions

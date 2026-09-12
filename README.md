@@ -30,5 +30,3 @@ The whole data-path is divided into 5 stages namely-
 - Data memory:- The component of a computer used to store all kinds of data. It is divided into further sub-parts and going into all of that is another whole chapter.
 
 and basic digital components like MUXes, decoders... All of these individual parts together (except the control logic) make up the data-path.
-
-## Short note on RV32I instructions

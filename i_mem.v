@@ -3,7 +3,7 @@ module i_mem (  input [31:0] instr_addr,
 ;
 
 reg [31:0] instr_mem [15:0]; // create an array of 16 instructions, each 32 bits wide
-integer iptr; // take the value of targeted address into a pointer variable
+integer iptr; // take the value of targeted address into a pointer sort of variable
 
 always @ (*) begin 
 

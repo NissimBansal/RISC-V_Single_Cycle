@@ -40,4 +40,4 @@ and basic digital components like MUXes, decoders... All of these individual par
  - U-type : 0110<u>1<u>11
  - J-type : 110<u>1<u>111
 
-2. Funct3 :- Except for in U and J-type instructions, this field further defines what function to perform in that particular instruction type (for eg.- ADD, SUB, OR...)
+2. Funct3 and Funct7 :- Except for in U and J-type instructions, these fields further define what function to perform in that particular instruction type (for eg.- ADD, SUB, OR...).

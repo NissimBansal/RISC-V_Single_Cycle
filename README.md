@@ -30,3 +30,14 @@ The whole data-path is divided into 5 stages namely-
 - Data memory:- The component of a computer used to store all kinds of data. It is divided into further sub-parts and going into all of that is another whole chapter.
 
 and basic digital components like MUXes, decoders... All of these individual parts together (except the control logic) make up the data-path.
+
+## Note on instructions in RV32I
+1. Opcode :- A 7-bit code occupying the bits [6:0] of all instructions that defines which subtype is it (R/I/S/B/U/J) which are as follows-
+ - R-type : 0110011
+ - I-type : 0<u>0<u>10011
+ - S-type : 0<u>10<u>0011
+ - B-type : <u>1<u>100011
+ - U-type : 0110<u>1<u>11
+ - J-type : 110<u>1<u>111
+
+2. Funct3 :- Except for in U and J-type instructions, this field further defines what function to perform in that particular instruction type (for eg.- ADD, SUB, OR...)

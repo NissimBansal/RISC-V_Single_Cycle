@@ -32,7 +32,7 @@ The whole data-path is divided into 5 stages namely-
 and basic digital components like MUXes, decoders... All of these individual parts together (except the control logic) make up the data-path.
 
 ## Note on instructions in RV32I
-1. Opcode :- A 7-bit code occupying the bits [6:0] of all instructions that defines which subtype is it (R/I/S/B/U/J) which are as follows-
+1. Opcode :- A 7-bit code occupying the bits [6:0] of all instructions that defines which type is it (R/I/S/B/U/J) which are as follows-
   - R-type : 0110011
   - I-type : 0010011 (Arithmetic)
   - S-type : 0100011

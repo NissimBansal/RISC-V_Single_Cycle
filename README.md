@@ -33,11 +33,11 @@ and basic digital components like MUXes, decoders... All of these individual par
 
 ## Note on instructions in RV32I
 1. Opcode :- A 7-bit code occupying the bits [6:0] of all instructions that defines which subtype is it (R/I/S/B/U/J) which are as follows-
- - R-type : 0110011
- - I-type : 0<u>0<u>10011
- - S-type : 0<u>10<u>0011
- - B-type : <u>1<u>100011
- - U-type : 0110<u>1<u>11
- - J-type : 110<u>1<u>111
+  - R-type : 0110011
+  - I-type : 0010011
+  - S-type : 0100011
+  - B-type : 1100011
+  - U-type : 0110111
+  - J-type : 1101111
 
 2. Funct3 and Funct7 :- Except for in U and J-type instructions, these fields further define what function to perform in that particular instruction type (for eg.- ADD, SUB, OR...).

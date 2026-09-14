@@ -10,9 +10,9 @@ always @ (*) begin
     iptr = instr_addr;
 
 
-    instr_mem[0] = 32'h007302B3; // add x5, x6, x7 
+    instr_mem[0] = 32'h007302B3; // add x5, x6, x7 : R-Type
 
-    instr_mem[1] = 32'h007342B3; // xor x5, x6, x7
+    instr_mem[1] = 32'h007342B3; // xor x5, x6, x7 : R-Type
 
     instr_mem[2] = 32'h12345678; // 
 

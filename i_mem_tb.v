@@ -14,7 +14,7 @@ initial begin
     for (i = 0; i < 2; i = i + 1) begin
        #10 instr_addr <= i; 
     end
-    #10;
+    #10; $finish;
 end
 
 initial begin

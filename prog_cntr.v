@@ -4,7 +4,7 @@ module prog_cntr (  input [31:0] current_instr_addr,
 ;
 
 always @ (posedge clk) begin
-    instr_addr <= current_instr_addr + 1;
+    instr_addr <= current_instr_addr + 1; // goes to the next instruction when current instruction updates
 end
 
 endmodule

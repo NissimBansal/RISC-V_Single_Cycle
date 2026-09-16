@@ -1,5 +1,5 @@
 $date
-	Wed Sep 16 21:03:15 2026
+	Wed Sep 16 21:40:56 2026
 $end
 $version
 	Icarus Verilog
@@ -12,7 +12,7 @@ $var wire 32 ! immediate [31:0] $end
 $var reg 32 " instr [31:0] $end
 $scope module u0 $end
 $var wire 32 # instr [31:0] $end
-$var wire 7 $ opcode [6:0] $end
+$var wire 32 $ instr_signed [31:0] $end
 $var reg 32 % immediate [31:0] $end
 $upscope $end
 $upscope $end
@@ -26,9 +26,13 @@ b0 "
 b0 !
 $end
 #10
-b1111111110110 !
-b1111111110110 %
-b10011 $
+b11100110000001010110011 $
+b11100110000001010110011 "
+b11100110000001010110011 #
+#25
+b11111111111111111111111111110110 !
+b11111111111111111111111111110110 %
+b11111111101100110000001010010011 $
 b11111111101100110000001010010011 "
 b11111111101100110000001010010011 #
-#25
+#40

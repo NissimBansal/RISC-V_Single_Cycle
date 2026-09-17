@@ -31,7 +31,9 @@ The whole data-path is divided into 5 stages namely-
 
 and basic digital components like MUXes, decoders... All of these individual parts together (except the control logic) make up the data-path.
 
-## Note on instructions in RV32I
+## Different fields in RISC V ISA
+Instructions have a particular format consisting of various fields (some fields might be particular to some instructions) that tell various features of it like what operation to form, on what, where to store, etc. These are-
+
 1. Opcode :- A 7-bit code occupying the bits [6:0] of all instructions that defines which type is it (R/I/S/B/U/J) which are as follows-
   - R-type : 0110011
   - I-type : 0010011 (Arithmetic)
@@ -40,6 +42,12 @@ and basic digital components like MUXes, decoders... All of these individual par
   - U-type : 0110111
   - J-type : 1101111
 
-2. Funct3 and Funct7 :- Except for in U and J-type instructions, these fields further define what function to perform in that particular instruction type (for eg.- ADD, SUB, OR...).
+2. Funct3 :- This field further define what function to perform in that particular instruction type (for eg.- ADD, SUB, OR...). R-type also has another field called Funct7 for differentiating between two instructions that have same Funct3 field because we use the same hardware for both the instructions however only one small chnage was.
+
+3. rs1 and rs2 :- These are 5 bit fields which point to the source registers from which values are taken for execution.
+
+4. rd :- The destination register where the value is stored after calculation.
+
+5. Immediate :- This field is used to define any constant values that appear in assembly code instead of pointing to a register that's got that value.
 
 ## Information related to my specific copy of RV32I 

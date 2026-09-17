@@ -41,3 +41,5 @@ and basic digital components like MUXes, decoders... All of these individual par
   - J-type : 1101111
 
 2. Funct3 and Funct7 :- Except for in U and J-type instructions, these fields further define what function to perform in that particular instruction type (for eg.- ADD, SUB, OR...).
+
+## Information related to my specific copy of RV32I 

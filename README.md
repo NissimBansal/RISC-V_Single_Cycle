@@ -42,7 +42,7 @@ Instructions have a particular format consisting of various fields (some fields 
   - U-type : 0110111
   - J-type : 1101111
 
-2. Funct3 :- This field further define what function to perform in that particular instruction type (for eg.- ADD, SUB, OR...). R-type also has another field called Funct7 for differentiating between two instructions that have same Funct3 field because we use the same hardware for both the instructions however only one small chnage was.
+2. Funct3 :- This field further define what function to perform in that particular instruction type (for eg.- ADD, SUB, OR...). R-type also has another field called Funct7 for differentiating between two instructions that have same Funct3 field because we wanted to use the same hardware for both the instructions as there was only one small change.
 
 3. rs1 and rs2 :- These are 5 bit fields which point to the source registers from which values are taken for execution.
 

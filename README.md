@@ -2,15 +2,15 @@
 The procesor consists of various modules integrated together to carry out different operations which are defined by a 32-bit binary instruction. These instructions are described by the RV32I Instructuction Set Architecture with different parts of those 32-bits pertaining to different things.
 
 The whole data-path is divided into 5 stages namely-
-- **Instruction Fetch (IF)** :- Process of getting the next instruction from the instruction memory. This stage might also update the program counter if the next value of program counter is the next instruction in instruction memory.
+1. **Instruction Fetch (IF)** :- Process of getting the next instruction from the instruction memory. This stage might also update the program counter if the next value of program counter is the next instruction in instruction memory.
 
-- **Instruction Decode (ID)** :- Defined as separating the various components of the instruction and alotting them where they are needed (register file, control signals, ALU, etc).
+2. **Instruction Decode (ID)** :- Defined as separating the various components of the instruction and alotting them where they are needed (register file, control signals, ALU, etc).
 
-- **Execute (EX)** :- This stage involves the ALU calculating anything that it has been sent from register file, immediate generator or control signals.
+3. **Execute (EX)** :- This stage involves the ALU calculating anything that it has been sent from register file, immediate generator or control signals.
 
-- **Memory Access (MEM)** :- This stage comes in play when we need to STORE or LOAD something from the data memory. This is also often the longest stage in the whole single-cycle architecture.
+4. **Memory Access (MEM)** :- This stage comes in play when we need to STORE or LOAD something from the data memory. This is also often the longest stage in the whole single-cycle architecture.
 
-- **Write-Back (WB)** :- Writing back to the register files the values from ALU / data memory. In a single cycle processor, this happens on the clock edge of the next instruction or the IF stage of the netx instruction.
+5. **Write-Back (WB)** :- Writing back to the register files the values from ALU / data memory. In a single cycle processor, this happens on the clock edge of the next instruction or the IF stage of the netx instruction.
 
 ## Modules / Functional Units of the single cycle RISC V processor
 - *Program Counter*:- The module which counts which instruction will be sent next for decoding. Its output is an address which can either be the last instruction's address + 4 bytes (next instruction in the instruction memory) or it can be described by a branch instruction to go to a particular address.
@@ -51,4 +51,6 @@ Instructions have a particular format consisting of various fields (some fields 
 5. **Immediate** :- This field is used to define any constant values that appear in assembly code instead of pointing to a register that's got that value.
 
 ## Information related to my specific copy of RV32I 
-1. *PCSel* :- If = 0 => next instruction instruction memory; if 1 i.e. the one from ALU because of jump / branch instruction.
+- *PCSel* :- If = 0 => next instruction instruction memory; if 1 i.e. the one from ALU because of jump / branch instruction.
+
+- 

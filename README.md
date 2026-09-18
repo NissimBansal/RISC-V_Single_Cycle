@@ -51,3 +51,4 @@ Instructions have a particular format consisting of various fields (some fields 
 5. Immediate :- This field is used to define any constant values that appear in assembly code instead of pointing to a register that's got that value.
 
 ## Information related to my specific copy of RV32I 
+1. PCSel :- If = 0 => next instruction instruction memory; if 1 i.e. the one from ALU because of jump / branch instruction.

@@ -14,7 +14,7 @@ always @ (*) begin
 
     instr_mem[1] = 32'h007342B3; // xor x5, x6, x7 : R-Type
 
-    instr_mem[2] = 32'hFFB30293; // addi x5, x6, -5 : I-Type
+    instr_mem[2] = 32'hFFB30293; // addi x5, x6, -5 : Arithmetic I-Type
 
     instr_mem[3] = 32'h12345678; // 
 

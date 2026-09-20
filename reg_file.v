@@ -11,7 +11,7 @@ wire [4:0] addrA = instr[19:15]; // capture rs1
 wire [4:0] addrB = instr[24:20]; // capture rs2
 wire [4:0] addrD = instr[11:7]; // capture rd
 
-always @ (instr or clk or we_reg) register[0] = 32'b0;
+always register[0] = 32'b0;
 
 always @ (posedge clk) begin
     if ((RegWEn) && (addrD != 5'b0)) begin // to prevent writing into x0 register

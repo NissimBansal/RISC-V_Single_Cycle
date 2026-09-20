@@ -1,6 +1,6 @@
 module reg_file (   input [31:0] instr,
                     input clk,
-                    input we_reg,
+                    input RegWEn,
                     input [31:0] ALU_op,
                     output [31:0] DataA, DataB)
 ;
@@ -14,7 +14,7 @@ wire [4:0] addrD = instr[11:7]; // capture rd
 always @ (instr or clk or we_reg) register[0] = 32'b0;
 
 always @ (posedge clk) begin
-    if ((we_reg) && (addrD != 5'b0)) begin // to prevent writing into x0 register
+    if ((RegWEn) && (addrD != 5'b0)) begin // to prevent writing into x0 register
         register[addrD] <= ALU_op;
     end
 end

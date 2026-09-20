@@ -5,13 +5,13 @@ reg [31:0] instr_addr;
 wire [31:0] instr;
 integer i;
 
-i_mem u0 (.instr_addr(instr_addr), .instr(instr));
+i_mem #(.SIZE(1024)) u0 (.instr_addr(instr_addr), .instr(instr));
 
 initial begin
 
     $monitor("instr_addr=0x%h instr=0x%h", instr_addr, instr);
 
-    for (i = 0; i < 2; i = i + 1) begin
+    for (i = 0; i < 3; i = i + 1) begin
        #10 instr_addr <= i; 
     end
     #10; $finish;

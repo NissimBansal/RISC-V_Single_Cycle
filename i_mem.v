@@ -1,14 +1,10 @@
-module i_mem (  input [31:0] instr_addr,
-                output [31:0] instr)
+module i_mem #(parameter SIZE = 16)(    input [31:0] instr_addr,
+                                        output [31:0] instr)
 ;
 
-reg [31:0] instr_mem [15:0]; // create an array of 16 instructions, each 32 bits wide
-integer iptr; // take the value of targeted address into a pointer sort of variable
+reg [31:0] instr_mem [SIZE-1:0]; // create an array of SIZE instructions, each 32 bits wide
 
 always @ (*) begin 
-
-    iptr = instr_addr;
-
 
     instr_mem[0] = 32'h007302B3; // add x5, x6, x7 : R-Type
 
@@ -28,6 +24,6 @@ always @ (*) begin
 
 end
 
-assign instr = instr_mem[iptr];
+assign instr = instr_mem[instr_addr];
 
 endmodule

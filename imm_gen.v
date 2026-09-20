@@ -2,14 +2,12 @@ module imm_gen (input [31:0] instr,
                 output reg [31:0] immediate)
 ;
 
-wire signed [31:0] instr_signed = instr;
-
 always @ (instr) begin
     case (instr[6:0])
 
         7'b0010011 : begin case (instr[14:12]) // I-Type(arithemtic)
 
-                        default : immediate = instr_signed >>> 19; // for logical/add
+                        default : immediate = $signed(instr) >>> 19; // for logical/add
 
                         3'b011 : immediate = instr >> 19; // for sltiu
 

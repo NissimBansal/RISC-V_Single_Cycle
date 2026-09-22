@@ -55,7 +55,7 @@ Instructions have a particular format consisting of various fields (some fields 
 
 - *ALUSel* :- 
   - 4'b0000 : add
-  - 4'b1000 : subtracr
+  - 4'b1000 : subtract
   - 4'b0001 : shift left logical
   - 4'b0010 : set less than
   - 4'b0011 : set less than unsigned

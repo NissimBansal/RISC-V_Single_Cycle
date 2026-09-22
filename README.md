@@ -37,6 +37,7 @@ Instructions have a particular format consisting of various fields (some fields 
 1. **Opcode** :- A 7-bit code occupying the bits [6:0] of all instructions that defines which type is it (R/I/S/B/U/J) which are as follows-
   - R-type : 0110011
   - I-type : 0010011 (Arithmetic)
+  - I-type : 0000011 (Load)
   - S-type : 0100011
   - B-type : 1100011
   - U-type : 0110111

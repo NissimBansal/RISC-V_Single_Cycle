@@ -18,6 +18,17 @@ always @ (instr) begin
         
         7'b0110011 : immediate = 32'b0; // R-Type
 
+        7'b0000011 : begin casez (instr[14:12]) // I-Type(load)
+
+                        3'b?0? : immediate = $signed(instr) >>> 19; // for lb/lh
+
+                        3'b010 : immediate = $signed(instr) >> 19; // for lw
+
+                        default : immediate = 'bx;
+
+                    endcase
+                    end
+
         default : immediate = 32'b0; 
     endcase
 end

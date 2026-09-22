@@ -53,4 +53,17 @@ Instructions have a particular format consisting of various fields (some fields 
 ## Information related to my specific copy of RV32I (not final)
 - *PCSel* :- If = 0 => next instruction instruction memory; if 1 i.e. the one from ALU (because of jump / branch instruction).
 
-- *ALUSel* :- If = 0 => Add; otherwise subtract. 
+- *ALUSel* :- 
+  - 4'b0000 : add
+  - 4'b1000 : subtracr
+  - 4'b0001 : shift left logical
+  - 4'b0010 : set less than
+  - 4'b0011 : set less than unsigned
+  - 4'b0100 : xor
+  - 4'b0101 : shift right logical
+  - 4'b1101 : shift right arithmetic
+  - 4'b0110 : or
+  - 4'b0111 : and
+  - otherwise : 32'b0; 
+
+- *RegWEN* :- If enabled, then only data will be written to that address in register file.

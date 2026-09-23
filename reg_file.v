@@ -1,8 +1,8 @@
-module reg_file (   input [31:0] instr,
-                    input clk,
-                    input RegWEn,
-                    input [31:0] ALU_output,
-                    output [31:0] DataA, DataB)
+module reg_file (input [31:0] instr,
+                 input clk,
+                 input RegWEn,
+                 input [31:0] ALU_output,
+                 output [31:0] DataA, DataB)
 ;
 
 reg [31:0] register [31:0]; // 32-bit register file with ach register being 32 bits wide

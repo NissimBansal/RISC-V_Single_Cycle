@@ -1,8 +1,8 @@
-module prog_cntr (  input [31:0] current_instr_addr,
-                    input [31:0] instr_addr_ALU,
-                    input PCSel,
-                    input clk,
-                    output reg [31:0] instr_addr)
+module prog_cntr (input [31:0] current_instr_addr,
+                  input [31:0] instr_addr_ALU,
+                  input PCSel,
+                  input clk,
+                  output reg [31:0] instr_addr)
 ;
 
 always @ (posedge clk) begin

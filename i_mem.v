@@ -1,5 +1,5 @@
-module i_mem #(parameter SIZE = 16)(    input [31:0] instr_addr,
-                                        output [31:0] instr)
+module i_mem #(parameter SIZE = 16)(input [31:0] instr_addr,
+                                    output [31:0] instr)
 ;
 
 reg [31:0] instr_mem [SIZE-1:0]; // create an array of SIZE instructions, each 32 bits wide

@@ -67,6 +67,6 @@ Instructions have a particular format consisting of various fields (some fields 
   - 4'b0111 : and
   - otherwise : 32'b0; 
 
-- *RegWEN* :- If enabled, then only data will be written to that address in register file.
+- *RegWEn* :- If enabled, then only data will be written to that address in register file.
 
 - *BSel* :- 0 if instruction is R-Type otherwise 1 (for I-Type).

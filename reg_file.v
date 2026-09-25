@@ -11,13 +11,13 @@ wire [4:0] addrA = instr[19:15]; // capture rs1
 wire [4:0] addrB = instr[24:20]; // capture rs2
 wire [4:0] addrD = instr[11:7]; // capture rd
 
-always @ (posedge clk) begin
+always @ (posedge clk) begin // write only at clock edge
     if ((RegWEn) && (addrD != 5'b0)) begin // to prevent writing into x0 register
         register[addrD] <= ALU_output;
     end
 end
 
-assign DataA = (addrA == 5'b0) ? 32'b0 : register[addrA];
-assign DataB = (addrB == 5'b0) ? 32'b0 : register[addrB];
+assign DataA = (addrA == 5'b0) ? 32'b0 : register[addrA]; // read as soon as address present
+assign DataB = (addrB == 5'b0) ? 32'b0 : register[addrB]; // read as soon as address present
 
 endmodule

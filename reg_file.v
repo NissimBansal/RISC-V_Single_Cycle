@@ -1,7 +1,7 @@
 module reg_file (input [31:0] instr,
                  input clk,
                  input RegWEn,
-                 input [31:0] ALU_output,
+                 input [31:0] DataD,
                  output [31:0] DataA, DataB)
 ;
 
@@ -13,7 +13,7 @@ wire [4:0] addrD = instr[11:7]; // capture rd
 
 always @ (posedge clk) begin // write only at clock edge
     if ((RegWEn) && (addrD != 5'b0)) begin // to prevent writing into x0 register
-        register[addrD] <= ALU_output;
+        register[addrD] <= DataD;
     end
 end
 

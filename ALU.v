@@ -4,7 +4,7 @@ module ALU (input signed [31:0] OperandA, OperandB,
 ;
 
 always @ (*) begin
-    case (ALUSel) 
+    case (ALUSel)
         4'b0000 : ALU_output = OperandA + OperandB; // add
         4'b1000 : ALU_output = OperandA - OperandB; // sub
         4'b0001 : ALU_output = OperandA << OperandB; // sll

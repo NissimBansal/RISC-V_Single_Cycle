@@ -69,4 +69,8 @@ Instructions have a particular format consisting of various fields (some fields 
 
 - *RegWEn* :- If enabled, then only data will be written to that address in register file.
 
-- *BSel* :- 0 if instruction is R-Type otherwise 1 (for I-Type).
+- *BSel* :- When second operand for ALU is from immediate generator, then it is 1 otherwise 0 if from register file.
+
+- *MemRW* :- If 0 => Load operation otherwise Store.
+
+- *WBSel* :- Ouputs ALU_output if 1; if 0 => Data read from data memory.

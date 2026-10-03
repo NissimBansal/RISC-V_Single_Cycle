@@ -1,114 +1,93 @@
-$date
-	Wed Sep 16 13:24:17 2026
-$end
-$version
-	Icarus Verilog
-$end
-$timescale
-	1s
-$end
-$scope module prog_cntr_tb $end
-$var wire 32 ! instr_addr [31:0] $end
-$var reg 1 " clk $end
-$var reg 32 # current_instr_addr [31:0] $end
-$scope module u0 $end
-$var wire 1 " clk $end
-$var wire 32 $ current_instr_addr [31:0] $end
-$var reg 32 % instr_addr [31:0] $end
-$upscope $end
-$upscope $end
-$enddefinitions $end
-#0
-$dumpvars
-bx %
-b0 $
-b0 #
-0"
-bx !
-$end
-#10
-b1 !
-b1 %
-1"
-#20
-0"
-#30
-b10 !
-b10 %
-1"
-b1 #
-b1 $
-#40
-0"
-#50
-b11 !
-b11 %
-1"
-b10 #
-b10 $
-#60
-0"
-#70
-b100 !
-b100 %
-1"
-b11 #
-b11 $
-#80
-0"
-#90
-b101 !
-b101 %
-1"
-b100 #
-b100 $
-#100
-0"
-#110
-b110 !
-b110 %
-1"
-b101 #
-b101 $
-#120
-0"
-#130
-b111 !
-b111 %
-1"
-b110 #
-b110 $
-#140
-0"
-#150
-b1000 !
-b1000 %
-1"
-b111 #
-b111 $
-#160
-0"
-#170
-b1001 !
-b1001 %
-1"
-b1000 #
-b1000 $
-#180
-0"
-#190
-b1010 !
-b1010 %
-1"
-b1001 #
-b1001 $
-#200
-0"
-#210
-b1011 !
-b1011 %
-1"
-b1010 #
-b1010 $
-#220
-0"
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "D:\Studies\iverilog\lib\ivl\system.vpi";
+:vpi_module "D:\Studies\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "D:\Studies\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "D:\Studies\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "D:\Studies\iverilog\lib\ivl\va_math.vpi";
+S_0000026bfe8aa6d0 .scope module, "prog_cntr_tb" "prog_cntr_tb" 2 1;
+ .timescale 0 0;
+v0000026bfe8ad050_0 .var "clk", 0 0;
+v0000026bfe8ad0f0_0 .var "current_instr_addr", 31 0;
+v0000026bfe8ad190_0 .net "instr_addr", 31 0, v0000026bfe8acf10_0;  1 drivers
+S_0000026bfe8acd80 .scope module, "u0" "prog_cntr" 2 8, 3 1 0, S_0000026bfe8aa6d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 32 "current_instr_addr";
+    .port_info 1 /INPUT 32 "instr_addr_ALU";
+    .port_info 2 /INPUT 1 "PCSel";
+    .port_info 3 /INPUT 1 "clk";
+    .port_info 4 /OUTPUT 32 "instr_addr";
+o0000026bfe9c6fd8 .functor BUFZ 1, C4<z>; HiZ drive
+v0000026bfe9c4820_0 .net "PCSel", 0 0, o0000026bfe9c6fd8;  0 drivers
+v0000026bfe8abc90_0 .net "clk", 0 0, v0000026bfe8ad050_0;  1 drivers
+v0000026bfe8a6d60_0 .net "current_instr_addr", 31 0, v0000026bfe8ad0f0_0;  1 drivers
+v0000026bfe8acf10_0 .var "instr_addr", 31 0;
+o0000026bfe9c7098 .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v0000026bfe8acfb0_0 .net "instr_addr_ALU", 31 0, o0000026bfe9c7098;  0 drivers
+E_0000026bfe9b7170 .event posedge, v0000026bfe8abc90_0;
+    .scope S_0000026bfe8acd80;
+T_0 ;
+    %wait E_0000026bfe9b7170;
+    %load/vec4 v0000026bfe9c4820_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %load/vec4 v0000026bfe8acfb0_0;
+    %assign/vec4 v0000026bfe8acf10_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0000026bfe8a6d60_0;
+    %addi 1, 0, 32;
+    %assign/vec4 v0000026bfe8acf10_0, 0;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0000026bfe8aa6d0;
+T_1 ;
+    %delay 10, 0;
+    %load/vec4 v0000026bfe8ad050_0;
+    %inv;
+    %store/vec4 v0000026bfe8ad050_0, 0, 1;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0000026bfe8aa6d0;
+T_2 ;
+    %pushi/vec4 0, 0, 33;
+    %split/vec4 32;
+    %store/vec4 v0000026bfe8ad0f0_0, 0, 32;
+    %store/vec4 v0000026bfe8ad050_0, 0, 1;
+    %delay 9, 0;
+    %pushi/vec4 10, 0, 32;
+T_2.0 %dup/vec4;
+    %pushi/vec4 0, 0, 32;
+    %cmp/s;
+    %jmp/1xz T_2.1, 5;
+    %jmp/1 T_2.1, 4;
+    %pushi/vec4 1, 0, 32;
+    %sub;
+    %wait E_0000026bfe9b7170;
+    %delay 1, 0;
+    %vpi_call 2 16 "$display", "time=%0t current_instr_addr=0x%h instr_addr=0x%h", $time, v0000026bfe8ad0f0_0, v0000026bfe8ad190_0 {0 0 0};
+    %delay 19, 0;
+    %load/vec4 v0000026bfe8ad190_0;
+    %store/vec4 v0000026bfe8ad0f0_0, 0, 32;
+    %jmp T_2.0;
+T_2.1 ;
+    %pop/vec4 1;
+    %delay 10, 0;
+    %vpi_call 2 20 "$finish" {0 0 0};
+    %end;
+    .thread T_2;
+    .scope S_0000026bfe8aa6d0;
+T_3 ;
+    %vpi_call 2 24 "$dumpfile", "prog_cntr.vcd" {0 0 0};
+    %vpi_call 2 25 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000026bfe8aa6d0 {0 0 0};
+    %end;
+    .thread T_3;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    ".\prog_cntr_tb.v";
+    ".\prog_cntr.v";

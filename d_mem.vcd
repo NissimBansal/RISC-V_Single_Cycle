@@ -1,0 +1,95 @@
+$date
+	Sat Oct 03 15:49:47 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module d_mem_tb $end
+$var wire 32 ! DataRead [31:0] $end
+$var reg 1 " MemRW $end
+$var reg 3 # ReadCntrl [2:0] $end
+$var reg 32 $ addr_dmem [31:0] $end
+$var reg 1 % clk $end
+$scope module u0 $end
+$var wire 1 " MemRW $end
+$var wire 3 & ReadCntrl [2:0] $end
+$var wire 32 ' addr_dmem [31:0] $end
+$var wire 1 % clk $end
+$var reg 32 ( DataRead [31:0] $end
+$var reg 30 ) word_addr [29:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx )
+bx (
+b0 '
+b0 &
+0%
+b0 $
+b0 #
+1"
+bx !
+$end
+#10
+b0 )
+0"
+1%
+#20
+b1010 $
+b1010 '
+b1 #
+b1 &
+0%
+#30
+b11111111111111111101111010101101 !
+b11111111111111111101111010101101 (
+b10 )
+1%
+#40
+0%
+#45
+b11000 $
+b11000 '
+b10 #
+b10 &
+#50
+b11111111111111111111111111111111 !
+b11111111111111111111111111111111 (
+b110 )
+1%
+#60
+0%
+#70
+b1110010 !
+b1110010 (
+b10101 )
+1%
+b1010101 $
+b1010101 '
+b0 #
+b0 &
+#80
+0%
+#90
+1%
+#95
+b1110110 $
+b1110110 '
+b101 #
+b101 &
+#100
+0%
+#110
+b101001111111011 !
+b101001111111011 (
+b11101 )
+1%
+#120
+0%
+#130
+1%

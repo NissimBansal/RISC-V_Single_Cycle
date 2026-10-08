@@ -1,12 +1,12 @@
 module cntrl_unit ( input [31:0] instr,
                     output PCSel, BSel, MemRW, RegWEn, WBSel,
-                    output [2:0] ReadCntrl,
+                    output [2:0] RWCntrl,
                     output reg [3:0] ALUSel)
 ;
 
 assign PCSel = instr[6];
 assign BSel = !(instr[6:0] == 7'b0110011); // if R-Type, BSel = 0; 1 if I/S-Type
-assign ReadCntrl = instr[9:7];
+assign RWCntrl = instr[9:7];
 assign MemRW = (instr[6:0] == 7'b0100011); // if S-Type, MemRW = 1; 0 otherwise
 assign WBSel = !(instr[6:0] == 7'b0000011); // If I-Type Load, WBSel = 0; 1 otherwise
 assign RegWEn = !(instr[6:0] == 7'b0100011); // if S-Type, RegWEn = 0; 1 otherwise

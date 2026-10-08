@@ -1,5 +1,5 @@
 module d_mem #( parameter DMEM_SIZE = 32) 
-              ( input [31:0] addr_dmem,
+              ( input [31:0] addr_dmem, DataB,
                 input clk, MemRW,
                 input [2:0] ReadCntrl,
                 output reg [31:0] DataRead)

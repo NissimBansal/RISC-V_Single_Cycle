@@ -18,7 +18,7 @@ initial begin
     Data_mem[29] = 32'h53FB_AC02;
 end
 
-always @ (*) begin
+always @ (*) begin // load doesn't require clock
     if (!MemRW) begin // if we have to load data from d_mem
         word_addr = addr_dmem [31:2]; 
         case (ReadCntrl) 
@@ -48,7 +48,7 @@ always @ (*) begin
     end
 end
 
-always @ (posedge clk) begin 
+always @ (posedge clk) begin // store requires clock pulse
     if (MemRW) begin // if we have to store data into d_mem
         
     end

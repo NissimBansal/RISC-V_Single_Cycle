@@ -18,7 +18,7 @@ initial begin
     Data_mem[29] = 32'h53FB_AC02;
 end
 
-always @ (posedge clk) begin
+always @ (*) begin
     if (!MemRW) begin // if we have to load data from d_mem
         word_addr = addr_dmem [31:2]; 
         case (ReadCntrl) 
@@ -46,9 +46,12 @@ always @ (posedge clk) begin
         default : DataRead <= Data_mem[word_addr];
         endcase
     end
-    else begin // if we have to store data into d_mem
+end
 
+always @ (posedge clk) begin 
+    if (MemRW) begin // if we have to store data into d_mem
+        
     end
 end
 
-endmodule                                   
+endmodule

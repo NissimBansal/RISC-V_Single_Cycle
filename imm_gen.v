@@ -11,7 +11,7 @@ always @ (instr) begin
         7'b0110011 : immediate = 32'b0; // R-Type
         7'b0000011 : immediate = $signed(instr) >>> 19; // I-Type(load)
         7'b0100011 : immediate = {{20{instr[31]}},instr[31:25],instr[11:7]}; // S-Type                     
-        default : immediate = 32'b0; 
+        default : immediate = 32'b0;
     endcase
 end
 

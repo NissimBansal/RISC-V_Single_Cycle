@@ -74,3 +74,5 @@ Instructions have a particular format consisting of various fields (some fields 
 - *MemRW* :- If 0 => Load operation otherwise Store.
 
 - *WBSel* :- Ouputs ALU_output if 1; if 0 => Data read from data memory.
+
+- *RWCntrl* :- Selects exactly how many bytes have to be updated in / from the data memory.

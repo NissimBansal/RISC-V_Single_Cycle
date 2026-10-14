@@ -9,7 +9,7 @@ reg [31:0] PC;
 
 always @ (posedge clk) begin
     if (PCSel) PC <= instr_addr_ALU; // send address from ALU
-    else PC <= current_instr_addr + 1; // goes to the next instruction in i_mem
+    else PC <= current_instr_addr + 4; // goes to the next instruction in i_mem
 end
 
 assign instr_addr = PC;

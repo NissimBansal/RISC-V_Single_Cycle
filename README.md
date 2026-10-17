@@ -76,3 +76,5 @@ Instructions have a particular format consisting of various fields (some fields 
 - *WBSel* :- Ouputs ALU_output if 1; if 0 => Data read from data memory.
 
 - *RWCntrl* :- Selects exactly how many bytes have to be updated in / from the data memory.
+
+- *ASel* :- Selects current instruction to go into ALU if B-type instruction, otherwise the data from first register from register file.

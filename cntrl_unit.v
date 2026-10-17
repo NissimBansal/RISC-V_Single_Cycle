@@ -5,7 +5,6 @@ module cntrl_unit ( input BrLT, BrEq,
                     output reg [3:0] ALUSel)
 ;
 
-assign PCSel = (instr[6:0] == 7'b1100011) ?  : 1'b0;
 assign ASel = (instr[6:0] == 7'b1100011); // if B-Type, ASel = 1; 0 otherwise
 assign BSel = !(instr[6:0] == 7'b0110011); // if R-Type, BSel = 0; 1 if I/S/B-Type
 assign RWCntrl = instr[9:7];
@@ -24,6 +23,13 @@ always @ (instr) begin
         7'b1100011 : ALUSel = 4'b0; // B-Type
         default : ALUSel = 4'b0;
     endcase
+end
+
+always @ (instr) begin
+    if (instr[6:0] == 7'b1100011) begin
+    
+    end
+    else PCSel = 1'b0;
 end
 
 endmodule

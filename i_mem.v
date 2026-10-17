@@ -11,7 +11,7 @@ always @ (*) begin
     instr_mem[3] = 32'h00B72423; // sw x11, 8(x14) : S-Type
     instr_mem[4] = 32'h00872683; // lw x13, 8(x14) : Load I-Type
     instr_mem[5] = 32'h00D59463; // bne x11, x13, Label (Label = PC + 8): B-Type
-    instr_mem[6] = 32'h12345678; //
+    instr_mem[6] = 32'h12345678; // 
     instr_mem[7] = 32'h12345678; //
 end
 

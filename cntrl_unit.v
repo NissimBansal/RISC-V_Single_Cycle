@@ -5,6 +5,7 @@ module cntrl_unit ( input [31:0] instr,
 ;
 
 assign PCSel = (instr[6:0] == 7'b1100011) ?  : 1'b0;
+assign ASel = (instr[6:0] == 7'b1100011); // if B-Type, ASel = 1; 0 otherwise
 assign BSel = !(instr[6:0] == 7'b0110011); // if R-Type, BSel = 0; 1 if I/S/B-Type
 assign RWCntrl = instr[9:7];
 assign MemRW = (instr[6:0] == 7'b0100011); // if S-Type, MemRW = 1; 0 otherwise

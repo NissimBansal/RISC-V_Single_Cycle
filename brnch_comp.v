@@ -3,6 +3,7 @@ module brnch_comp ( input [31:0] DataA, DataB,
                     output BrEq, BrLT)
 ;
 
-
+assign BrEq = (DataA == DataB);
+assign BrLT = BrUn ? (DataA < DataB) : ($signed(DataA) < $signed(DataB));
 
 endmodule

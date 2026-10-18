@@ -1,13 +1,15 @@
 module cntrl_unit ( input BrLT, BrEq,
                     input [31:0] instr,
-                    output PCSel, BSel, MemRW, RegWEn, WBSel, BrUn,
+                    output BSel, MemRW, RegWEn, WBSel, BrUn,
                     output [2:0] RWCntrl,
+                    output reg PCSel,
                     output reg [3:0] ALUSel)
 ;
 
 assign ASel = (instr[6:0] == 7'b1100011); // if B-Type, ASel = 1; 0 otherwise
 assign BSel = !(instr[6:0] == 7'b0110011); // if R-Type, BSel = 0; 1 if I/S/B-Type
-assign RWCntrl = instr[9:7];
+assign BrUn = (instr[14:13] == 2'b11); // if funct3 is 110/111 or bltu/bgeu
+assign RWCntrl = instr[14:12]; // funct3 field
 assign MemRW = (instr[6:0] == 7'b0100011); // if S-Type, MemRW = 1; 0 otherwise
 assign WBSel = !(instr[6:0] == 7'b0000011); // If I-Type Load, WBSel = 0; 1 otherwise
 assign RegWEn = !((instr[6:0] == 7'b0100011) | (instr[6:0] == 7'b1100011)); // if S/B-Type, RegWEn = 0; 1 otherwise
@@ -27,7 +29,15 @@ end
 
 always @ (instr) begin
     if (instr[6:0] == 7'b1100011) begin
-    
+    case (instr[14:12]) 
+        3'b000 : PCSel = BrEq; // beq
+        3'b001 : PCSel = !BrEq; // bne
+        3'b100 : PCSel = BrLT; //blt
+        3'b101 : PCSel = !BrLT; //bge
+        3'b110 : PCSel = BrLT; //bltu
+        3'b111 : PCSel = !BrLT; //bgeu
+        default : PCSel = 1'b0;
+        endcase
     end
     else PCSel = 1'b0;
 end

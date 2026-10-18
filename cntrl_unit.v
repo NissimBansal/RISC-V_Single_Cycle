@@ -1,6 +1,6 @@
 module cntrl_unit ( input BrLT, BrEq,
                     input [31:0] instr,
-                    output PCSel, BSel, MemRW, RegWEn, WBSel,
+                    output PCSel, BSel, MemRW, RegWEn, WBSel, BrUn,
                     output [2:0] RWCntrl,
                     output reg [3:0] ALUSel)
 ;

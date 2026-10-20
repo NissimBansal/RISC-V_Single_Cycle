@@ -78,3 +78,9 @@ Instructions have a particular format consisting of various fields (some fields 
 - *RWCntrl* :- Selects exactly how many bytes have to be updated in / from the data memory.
 
 - *ASel* :- Selects current instruction to go into ALU if B-type instruction, otherwise the data from first register from register file.
+
+- *BrLT* :- Outputs 1 (from branch comparator) if operand A is less than operand B (both signed / unsigned comparison).
+
+- *BrEq* :- Outputs 1 (from branch comparator) if operand A is equal to operand B.
+
+- *BrUn* :- if its unsigned comparsion between operands in a branch instruction, then it is set to 1, otherwise 0.

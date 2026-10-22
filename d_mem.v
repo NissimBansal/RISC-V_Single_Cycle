@@ -57,11 +57,11 @@ always @ (posedge clk) begin // store requires clock pulse
                     2'b01 : Data_mem[word_addr][15:8] <= DataB[7:0];
                     2'b10 : Data_mem[word_addr][23:16] <= DataB[7:0];
                     2'b11 : Data_mem[word_addr][31:24] <= DataB[7:0];
-                endcase;
+                endcase
         3'b001 : case (addr_dmem[1:0]) // sh
                     2'b00 : Data_mem[word_addr][15:0] <= DataB[15:0];
                     2'b10 : Data_mem[word_addr][31:16] <= DataB[15:0];
-                endcase;
+                endcase
         3'b010 : Data_mem[word_addr] <= DataB; // sw
         default : Data_mem[word_addr] <= DataB;
         endcase

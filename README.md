@@ -40,7 +40,7 @@ Instructions have a particular format consisting of various fields (some fields 
   - I-type : 0000011 (Load)
   - S-type : 0100011
   - B-type : 1100011
-  - U-type : 0110111
+  - U-type : 0110111(LUI) and 0010111(AUIPC)
   - J-type : 1101111
 
 2. **Funct3** :- This field further define what function to perform in that particular instruction type (for eg.- ADD, SUB, OR...). R-type also has another field called Funct7 for differentiating between two instructions that have same Funct3 field because we wanted to use the same hardware for both the instructions as there was only one small change.

@@ -4,7 +4,7 @@ module i_mem #(parameter IMEM_SIZE = 16)(input [31:0] instr_addr,
 
 reg [31:0] instr_mem [IMEM_SIZE-1:0]; // array of IMEM_SIZE instructions, each 32 bits wide
 
-always @ (*) begin 
+initial begin 
     instr_mem[0] = 32'h007302B3; // add x5, x6, x7 : R-Type
     instr_mem[1] = 32'h00A4C433; // xor x8, x9, x10 : R-Type
     instr_mem[2] = 32'hFFB60593; // addi x11, x12, -5 : Arithmetic I-Type

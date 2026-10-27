@@ -8,7 +8,7 @@ always @ (*) begin
         4'b0000 : ALU_output = OperandA + OperandB; // add
         4'b1000 : ALU_output = OperandA - OperandB; // sub
         4'b0001 : ALU_output = OperandA << OperandB; // sll
-        4'b0010 : ALU_output = (OperandA < OperandB) // slt
+        4'b0010 : ALU_output = (OperandA < OperandB); // slt
         4'b0011 : ALU_output = ($unsigned(OperandA) < $unsigned(OperandB)); // sltu
         4'b0100 : ALU_output = OperandA ^ OperandB; // xor
         4'b0101 : ALU_output = OperandA >> OperandB; // srl

@@ -36,12 +36,11 @@ Instructions have a particular format consisting of various fields (some fields 
 
 1. **Opcode** :- A 7-bit code occupying the bits [6:0] of all instructions that defines which type is it (R/I/S/B/U/J) which are as follows-
   - R-type : 0110011
-  - I-type : 0010011 (Arithmetic)
-  - I-type : 0000011 (Load)
+  - I-type : 0010011 (Arithmetic), 0000011 (Load) and 1100111 (JALR)
   - S-type : 0100011
   - B-type : 1100011
-  - U-type : 0110111(LUI) and 0010111(AUIPC)
-  - J-type : 1101111
+  - U-type : 0110111 (LUI) and 0010111 (AUIPC)
+  - J-type : 1101111 
 
 2. **Funct3** :- This field further define what function to perform in that particular instruction type (for eg.- ADD, SUB, OR...). R-type also has another field called Funct7 for differentiating between two instructions that have same Funct3 field because we wanted to use the same hardware for both the instructions as there was only one small change.
 

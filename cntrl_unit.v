@@ -33,18 +33,19 @@ always @ (instr) begin
 end
 
 always @ (instr) begin
-    if (opcode == 7'b1100011) begin
-    case (instr[14:12]) 
-        3'b000 : PCSel = BrEq; // beq
-        3'b001 : PCSel = !BrEq; // bne
-        3'b100 : PCSel = BrLT; //blt
-        3'b101 : PCSel = !BrLT; //bge
-        3'b110 : PCSel = BrLT; //bltu
-        3'b111 : PCSel = !BrLT; //bgeu
-        default : PCSel = 1'b0;
-        endcase
-    end
-    else PCSel = 1'b0;
+    case (opcode)
+    7'b1100011 : case (instr[14:12]) // B-Type
+                    3'b000 : PCSel = BrEq; // beq
+                    3'b001 : PCSel = !BrEq; // bne
+                    3'b100 : PCSel = BrLT; //blt
+                    3'b101 : PCSel = !BrLT; //bge
+                    3'b110 : PCSel = BrLT; //bltu
+                    3'b111 : PCSel = !BrLT; //bgeu
+                    default : PCSel = 1'b0;
+                endcase
+    7'b1100111 : PCSel = 1'b1; // I-Type JALR
+    default : PCSel = 1'b0;
+    endcase
 end
 
 endmodule

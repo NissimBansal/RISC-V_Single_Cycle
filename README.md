@@ -34,7 +34,7 @@ and basic digital components like MUXes, decoders... All of these individual par
 ## Different fields in RISC V ISA
 Instructions have a particular format consisting of various fields (some fields might be particular to some instructions) that tell various features of it like what operation to form, on what, where to store, etc. These are-
 
-1. **Opcode** :- A 7-bit code occupying the bits [6:0] of all instructions that defines which type is it (R/I/S/B/U/J) which are as follows-
+1. **Opcode** :- A 7-bit code occupying the bits [6:0] of all instructions that defines which type and subtype is it (R/I/S/B/U/J) which are as follows-
   - R-type : 0110011
   - I-type : 0010011 (Arithmetic), 0000011 (Load) and 1100111 (JALR)
   - S-type : 0100011
@@ -72,7 +72,7 @@ Instructions have a particular format consisting of various fields (some fields 
 
 - *MemRW* :- If 0 => Load operation otherwise Store.
 
-- *WBSel* :- Ouputs ALU_output if 1; if 0 => Data read from data memory.
+- *WBSel* :- Outputs current instruction + 4 if 2; ALU_output if 1 & if 0 => Data read from data memory.
 
 - *RWCntrl* :- Selects exactly how many bytes have to be updated in / from the data memory.
 

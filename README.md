@@ -50,7 +50,7 @@ Instructions have a particular format consisting of various fields (some fields 
 
 5. **Immediate** :- This field is used to define any constant values that appear in assembly code instead of pointing to a register that's got that value.
 
-## Information related to my specific copy of RV32I (not final)
+## Information related to my specific copy of RV32I 
 - *PCSel* :- If = 0 => next instruction instruction memory; if 1 i.e. the one from ALU (because of jump / branch instruction).
 
 - *ALUSel* :- 
@@ -64,6 +64,7 @@ Instructions have a particular format consisting of various fields (some fields 
   - 4'b1101 : shift right arithmetic
   - 4'b0110 : or
   - 4'b0111 : and
+  - 4'b1111 : OperandB
   - otherwise : 32'b0; 
 
 - *RegWEn* :- If enabled, then only data will be written to that address in register file.
@@ -76,7 +77,7 @@ Instructions have a particular format consisting of various fields (some fields 
 
 - *RWCntrl* :- Selects exactly how many bytes have to be updated in / from the data memory.
 
-- *ASel* :- Selects current instruction to go into ALU if B-type instruction, otherwise the data from first register from register file.
+- *ASel* :- Selects current instruction to go into ALU if B/J-type instruction, otherwise the data from first register from register file.
 
 - *BrLT* :- Outputs 1 (from branch comparator) if operand A is less than operand B (both signed / unsigned comparison).
 

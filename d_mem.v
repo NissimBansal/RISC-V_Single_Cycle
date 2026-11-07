@@ -1,6 +1,6 @@
 module d_mem #( parameter DMEM_SIZE = 32) 
               ( input [31:0] addr_dmem, DataB,
-                input clk, MemRW,
+                input clk, MemRW, MASTER_RESET,
                 input [2:0] RWCntrl,
                 output reg [31:0] DataRead)
 ;
@@ -8,7 +8,8 @@ module d_mem #( parameter DMEM_SIZE = 32)
 reg [31:0] Data_mem [DMEM_SIZE-1:0]; // array of DMEM_SIZE registers, each 32 bits/4 bytes wth each byte having a unique address
 reg [29:0] word_addr;
 
-initial begin
+always @ (*) begin
+    if (MASTER_RESET) begin 
     Data_mem[2] = 32'hDEAD_BEEF;
     Data_mem[5] = 32'h0000_0000;
     Data_mem[6] = 32'hFFFF_FFFF;
@@ -16,6 +17,7 @@ initial begin
     Data_mem[12] = 32'h0800_0000;
     Data_mem[21] = 32'h2000_7201;
     Data_mem[29] = 32'h53FB_AC02;
+    end
 end
 
 always @ (*) begin // load doesn't require clock

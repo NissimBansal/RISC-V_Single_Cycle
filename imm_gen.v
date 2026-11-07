@@ -14,6 +14,8 @@ always @ (instr) begin
         7'b0100011 : immediate = {{20{instr[31]}},instr[31:25],instr[11:7]}; // S-Type  
         7'b1100011 : immediate = {{20{instr[31]}},instr[7],instr[30:25],instr[11:8],1'b0}; // B-Type  
         7'b1101111 : immediate = {{12{instr[31]}},instr[19:12],instr[20],instr[30:21],1'b0} // J-Type
+        7'b0110111 : immediate = instr[31:12] << 12; // U-Type(LUI)
+        7'b0010111 : immediate = instr[31:12] << 12; // U-Type(AUIPC)
         default : immediate = 32'b0;
     endcase
 end

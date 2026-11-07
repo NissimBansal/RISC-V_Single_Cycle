@@ -9,13 +9,13 @@ module cntrl_unit ( input BrLT, BrEq,
 
 wire [6:0] opcode = instr[6:0];
 
-assign ASel = (opcode == 7'b1100011) || (opcode == 7'1101111); // if B/J-Type, ASel = 1; 0 otherwise
-assign BSel = !(opcode == 7'b0110011); // if R-Type, BSel = 0; 1 if I/S/B/J-Type
+assign ASel = (opcode == 7'b1100011) || (opcode == 7'1101111) || (opcode == 7'b0010111); // if B/U(AUIPC)/J-Type, ASel = 1; 0 otherwise
+assign BSel = !(opcode == 7'b0110011); // if R-Type, BSel = 0; 1 if I/S/B/U/J-Type
 assign BrUn = (instr[14:13] == 2'b11); // if funct3 is 110/111 or bltu/bgeu
 assign RWCntrl = instr[14:12]; // funct3 field
 assign MemRW = (opcode == 7'b0100011); // if S-Type, MemRW = 1; 0 otherwise
 assign WBSel = ((opcode == 1100111) || (opcode == 1101111)) ? 2'b10 : !(opcode == 7'b0000011) ? 2'b01 : 2'b00; // If I-Type(JALR)/J-Type, WBSel = 2; if I-Type Load, WBSel = 0; 1 otherwise
-assign RegWEn = !((opcode == 7'b0100011) | (opcode == 7'b1100011)); // if S/B-Type, RegWEn = 0; 1 otherwise
+assign RegWEn = !((opcode == 7'b0100011) || (opcode == 7'b1100011)); // if S/B-Type, RegWEn = 0; 1 otherwise
 
 always @ (instr) begin
     case (opcode)
@@ -28,6 +28,8 @@ always @ (instr) begin
         7'b0100011 : ALUSel = 4'b0; // S-Type
         7'b1100011 : ALUSel = 4'b0; // B-Type
         7'b1101111 : ALUSel = 4'b0; // J-Type
+        7'b0110111 : ALUSel = 4'b1111; // U-Type LUI
+        7'b0010111 : ALUSel = 4'b0; // U-Type AUIPC
         default : ALUSel = 4'b0;
     endcase
 end

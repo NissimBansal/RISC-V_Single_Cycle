@@ -15,6 +15,7 @@ always @ (*) begin
         4'b1101 : ALU_output = OperandA >>> OperandB; // sra
         4'b0110 : ALU_output = OperandA | OperandB; // or
         4'b0111 : ALU_output = OperandA & OperandB; // and
+        4'b1111 : ALU_output = OperandB; // LUI and AUIPC
         default : ALU_output = 32'b0; 
     endcase
 end

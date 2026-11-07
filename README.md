@@ -1,5 +1,5 @@
 ## How does the single cycle RISC V processor work IRL?
-The procesor consists of various modules integrated together to carry out different operations which are defined by a 32-bit binary instruction. These instructions are described by the RV32I Instructuction Set Architecture with different parts of those 32-bits pertaining to different things.
+The procesor consists of various modules integrated together to carry out different operations which are defined by a 32-bit binary instruction. These instructions are described by the RV32I Instructuction Set Architecture with different parts of those 32-bits pertaining to different things. Even though these are different stages, in the single cycle processor, all of them happen at once, hence this is more of a combinational circuit.
 
 The whole data-path is divided into 5 stages namely-
 1. **Instruction Fetch (IF)** :- Process of getting the next instruction from the instruction memory. This stage might also update the program counter if the next value of program counter is the next instruction in instruction memory.

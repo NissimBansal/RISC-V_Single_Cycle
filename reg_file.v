@@ -11,7 +11,7 @@ wire [4:0] addrA = instr[19:15]; // capture rs1
 wire [4:0] addrB = instr[24:20]; // capture rs2
 wire [4:0] addrD = instr[11:7]; // capture rd
 
-always @ (MASTER_RESET) begin
+always @ (*) begin
     if (MASTER_RESET) begin
     register[6] = 32'h000956ab;
     register[7] = 32'h003016ff;

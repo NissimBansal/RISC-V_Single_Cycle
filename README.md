@@ -64,7 +64,7 @@ Instructions have a particular format consisting of various fields (some fields 
   - 4'b1101 : shift right arithmetic
   - 4'b0110 : or
   - 4'b0111 : and
-  - 4'b1111 : OperandB
+  - 4'b1111 : OperandB (for LUI)
   - otherwise : 32'b0; 
 
 - *RegWEn* :- If enabled, then only data will be written to that address in register file.

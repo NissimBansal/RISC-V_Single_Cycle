@@ -15,6 +15,8 @@ initial begin
     #3; 
     MASTER_RESET = 1'b0;
 
+    #150;
+    $finish;
 end
 
 endmodule

@@ -1,6 +1,6 @@
 module cntrl_unit ( input BrLT, BrEq,
                     input [31:0] instr,
-                    output BSel, MemRW, RegWEn, BrUn,
+                    output ASel, BSel, MemRW, RegWEn, BrUn,
                     output [1:0] WBSel,
                     output [2:0] RWCntrl,
                     output reg PCSel,
@@ -9,7 +9,7 @@ module cntrl_unit ( input BrLT, BrEq,
 
 wire [6:0] opcode = instr[6:0];
 
-assign ASel = (opcode == 7'b1100011) || (opcode == 7'1101111) || (opcode == 7'b0010111); // if B/U(AUIPC)/J-Type, ASel = 1; 0 otherwise
+assign ASel = (opcode == 7'b1100011) || (opcode == 7'b1101111) || (opcode == 7'b0010111); // if B/U(AUIPC)/J-Type, ASel = 1; 0 otherwise
 assign BSel = !(opcode == 7'b0110011); // if R-Type, BSel = 0; 1 if I/S/B/U/J-Type
 assign BrUn = (instr[14:13] == 2'b11); // if funct3 is 110/111 or bltu/bgeu
 assign RWCntrl = instr[14:12]; // funct3 field

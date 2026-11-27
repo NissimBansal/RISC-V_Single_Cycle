@@ -1,0 +1,149 @@
+$date
+	Fri Nov 27 11:00:06 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module cntrl_unit_tb $end
+$var wire 2 ! WBSel [1:0] $end
+$var wire 1 " RegWEn $end
+$var wire 3 # RWCntrl [2:0] $end
+$var wire 1 $ PCSel $end
+$var wire 1 % MemRW $end
+$var wire 1 & BrUn $end
+$var wire 1 ' BSel $end
+$var wire 1 ( ASel $end
+$var wire 4 ) ALUSel [3:0] $end
+$var reg 1 * BrEq $end
+$var reg 1 + BrLT $end
+$var reg 32 , instr [31:0] $end
+$scope module u4 $end
+$var wire 1 ( ASel $end
+$var wire 1 * BrEq $end
+$var wire 1 + BrLT $end
+$var wire 32 - instr [31:0] $end
+$var wire 7 . opcode [6:0] $end
+$var wire 2 / WBSel [1:0] $end
+$var wire 1 " RegWEn $end
+$var wire 3 0 RWCntrl [2:0] $end
+$var wire 1 % MemRW $end
+$var wire 1 & BrUn $end
+$var wire 1 ' BSel $end
+$var reg 4 1 ALUSel [3:0] $end
+$var reg 1 $ PCSel $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 1
+b0 0
+b1 /
+b0 .
+b0 -
+b0 ,
+0+
+0*
+b0 )
+0(
+1'
+0&
+0%
+0$
+b0 #
+1"
+b1 !
+$end
+#10000
+b101 )
+b101 1
+0'
+b110011 .
+b11100110000001010110011 ,
+b11100110000001010110011 -
+#20000
+b0 )
+b0 1
+b100 #
+b100 0
+b101001001100010000110011 ,
+b101001001100010000110011 -
+#30000
+b11 )
+b11 1
+1'
+b10011 .
+b0 #
+b0 0
+b11111111101101100000010110010011 ,
+b11111111101101100000010110010011 -
+#40000
+0"
+b0 )
+b0 1
+1%
+b100011 .
+b10 #
+b10 0
+b101101110010010000100011 ,
+b101101110010010000100011 -
+#50000
+b0 !
+b0 /
+1"
+0%
+b11 .
+b100001110010011010000011 ,
+b100001110010011010000011 -
+#60000
+1(
+b1 !
+b1 /
+0"
+b1100011 .
+b1 #
+b1 0
+1*
+b110101011001100001100011 ,
+b110101011001100001100011 -
+#70000
+0(
+1"
+b0 .
+1&
+b111 #
+b111 0
+b1001010110001001111000000000000 ,
+b1001010110001001111000000000000 -
+#80000
+1(
+b10111 .
+0&
+b100 #
+b100 0
+b10011000000011001100010110010111 ,
+b10011000000011001100010110010111 -
+#90000
+1(
+1$
+b1101111 .
+b0 #
+b0 0
+b10010010101001000100001101111 ,
+b10010010101001000100001101111 -
+#100000
+0(
+b1100111 .
+b10100000000000100011100111 ,
+b10100000000000100011100111 -
+#110000
+b10 )
+b10 1
+0$
+b10011 .
+b1000100111101100000100100010011 ,
+b1000100111101100000100100010011 -
+#120000

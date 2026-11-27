@@ -3,7 +3,7 @@ module imm_gen_tb ();
 reg [31:0] instr;
 wire signed [31:0] immediate;
 
-imm_gen u0 (.instr(instr),.immediate(immediate));
+imm_gen u7 (.instr(instr),.immediate(immediate));
 
 initial begin
     instr = 32'b0;
@@ -12,6 +12,30 @@ initial begin
     $display("time=%0t instr=0x%h immediate=0x%h", $time, instr, immediate);
     #10;
     instr = 32'hFFB30293; #5;
+    $display("time=%0t instr=0x%h immediate=0x%h", $time, instr, immediate);
+    #10;
+    instr = 32'h00B72423; #5;
+    $display("time=%0t instr=0x%h immediate=0x%h", $time, instr, immediate);
+    #10;
+    instr = 32'h00872683; #5;
+    $display("time=%0t instr=0x%h immediate=0x%h", $time, instr, immediate);
+    #10;
+    instr = 32'h00D59863; #5;
+    $display("time=%0t instr=0x%h immediate=0x%h", $time, instr, immediate);
+    #10;
+    instr = 32'h4AC4F7B7; #5;
+    $display("time=%0t instr=0x%h immediate=0x%h", $time, instr, immediate);
+    #10;
+    instr = 32'h980CC597; #5;
+    $display("time=%0t instr=0x%h immediate=0x%h", $time, instr, immediate);
+    #10;
+    instr = 32'h1254886F; #5;
+    $display("time=%0t instr=0x%h immediate=0x%h", $time, instr, immediate);
+    #10;
+    instr = 32'h028008E7; #5;
+    $display("time=%0t instr=0x%h immediate=0x%h", $time, instr, immediate);
+    #10;
+    instr = 32'h44F60913; #5;
     $display("time=%0t instr=0x%h immediate=0x%h", $time, instr, immediate);
     #10; $finish;
 end

@@ -13,9 +13,9 @@ always @ (*) begin
     instr_mem[3] = 32'h00B72423; // sw x11, 8(x14) : S-Type
     instr_mem[4] = 32'h00872683; // lw x13, 8(x14) : Load I-Type
     instr_mem[5] = 32'h00D59863; // bne x11, x13, Label1 (Label1 = PC + 0x10) : B-Type
-    instr_mem[6] = 32'h4AC4F000; // lui x15, 0x4AC4F : LUI U-Type
+    instr_mem[6] = 32'h4AC4F7B7; // lui x15, 0x4AC4F : LUI U-Type
     instr_mem[7] = 32'h980CC597; // auipc x11, 0x980CC : AUIPC U-Type
-    instr_mem[8] = 32'h1254886F; // jal x16, Label2 (Label2 = PC + 0x48925) : J-Type
+    instr_mem[8] = 32'h1254886F; // jal x16, Label2 (Label2 = PC + 0x48924) : J-Type
     instr_mem[9] = 32'h028008E7; // jalr x17, x0, 0x28 : JALR I-Type
     instr_mem[10] = 32'h44F60913; // addi x18, x12, 44F : Arithmetic I-Type
     end

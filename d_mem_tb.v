@@ -1,11 +1,11 @@
 module d_mem_tb ();
 
-reg [31:0] addr_dmem;
-reg clk, MemRW;
+reg [31:0] addr_dmem, DataB;
+reg clk, MemRW, MASTER_RESET;
 reg [2:0] RWCntrl;
 wire [31:0] DataRead;
 
-d_mem #(.DMEM_SIZE(32)) u0 (.addr_dmem(addr_dmem),.clk(clk),.MemRW(MemRW),.RWCntrl(RWCntrl),.DataRead(DataRead));
+d_mem #(.DMEM_SIZE(32)) u5 (.addr_dmem(addr_dmem), .DataB(DataB), .clk(clk), .MemRW(MemRW), .MASTER_RESET(MASTER_RESET), .RWCntrl(RWCntrl), .DataRead(DataRead));
 
 always #10 clk = ~clk;
 

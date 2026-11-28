@@ -4,7 +4,7 @@ reg [31:0] ALU_output, DataRead, instr_addr;
 reg [1:0] WBSel;
 wire [31:0] DataD;
 
-WBSelMux u125 (ALU_output, DataRead, instr_addr, WBSel, DataD);
+WBSelMux u10 (ALU_output, DataRead, instr_addr, WBSel, DataD);
 
 initial begin
 

@@ -5,7 +5,7 @@ reg clk, PCSel;
 wire [31:0] instr_addr;
 integer i;
 
-prog_cntr u0 (.current_instr_addr(current_instr_addr), .instr_addr_ALU(instr_addr_ALU), .clk(clk), .PCSel(PCSel), .instr_addr(instr_addr));
+prog_cntr u8 (.current_instr_addr(current_instr_addr), .instr_addr_ALU(instr_addr_ALU), .clk(clk), .PCSel(PCSel), .instr_addr(instr_addr));
 
 always #5 clk = ~clk;
 always #10 current_instr_addr = instr_addr;
@@ -21,7 +21,7 @@ initial begin
     #2; instr_addr_ALU = 32'h00A4C433;
     #10; PCSel = 1'b1;
     #10; PCSel = 1'b0;
-    
+
     #10 $finish;
 end
 

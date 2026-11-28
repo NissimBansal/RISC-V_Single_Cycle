@@ -16,10 +16,10 @@ i_mem #(.IMEM_SIZE(16)) u6 (.MASTER_RESET(MASTER_RESET), .instr_addr(instr_addr)
 
 imm_gen u7 (.instr(instr), .immediate(immediate));
 
-prog_cntr u8 (.current_instr_addr(), .instr_addr_ALU(), .PCSel(), .clk(clk), .instr_addr());
+prog_cntr u8 (.current_instr_addr(current_instr_addr), .instr_addr_ALU(instr_addr_ALU), .clk(clk), .PCSel(PCSel), .instr_addr(instr_addr));
 
 reg_file u9 (.instr(), .clk(clk), .RegWEn(), .MASTER_RESET(MASTER_RESET), .DataD(), .DataA(), .DataB());
 
-WBSelMux u10 (.ALU_output(), DataRead(), instr_addr(), .WBSel(), .DataD());
+WBSelMux u10 (.ALU_output(ALU_output), DataRead(DataRead), instr_addr(instr_addr), .WBSel(WBSel), .DataD(DataD));
 
 endmodule

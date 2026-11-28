@@ -4,7 +4,7 @@ ALU u0 (.OperandA(OperandA), .OperandB(OperandB), .ALUSel(ALUSel), .ALU_output(A
 
 ASel_Mux u1 (.DataA(DataA), instr_addr(instr_addr), .ASel(ASel), .OperandA(OperandA));
 
-brnch_comp u2 (.DataA(), .DataB(), .BrUn(), .BrEq(), .BrLT());
+brnch_comp u2 (.DataA(DataA), .DataB(DataB), .BrUn(BrUn), .BrEq(BrEq), .BrLT(BrLT));
 
 BSel_Mux u3 (.DataB(DataB), .immediate(immediate), .BSel(BSel), .OperandB(OperandB));
 
